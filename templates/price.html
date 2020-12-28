@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">HOME</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact Us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sales Analysis
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/audi">AUDI Sales</a></li>
+            <li><a class="dropdown-item" href="/volkswagen">VOLKSWAGEN Sales</a></li>
+
+            <li><a class="dropdown-item" href="/porsche">PORSCHE Sales</a></li>
+              <li><a class="dropdown-item" href="/mercedes-benz">MERCEDES-BENZ Sales</a></li>
+              <li><a class="dropdown-item" href="/bugatti">BUGATTI Sales</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<br><br><br>
+<div class="container">
+    <form action="{{ url_for('result')}}" method="post">
+
+  <div class="row">
+    <div class="col-sm-3">
+       <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Vehicle Type</h5>
+
+                            <select name="Vehicle_type"  required="required">
+                                <option value="Passenger">Passenger</option>
+                                <option value="Car">Car</option>
+                            </select>
+                        </div>
+                    </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Engine Size</h5>
+
+                            <input type="number" step="0.01" name="Engine_size" required="required">
+                        </div>
+                    </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Horsepower</h5>
+
+                            <input type="number" step="0.01" name="Horsepower" required="required">
+                        </div>
+                    </div>
+
+    </div>
+      <div class="col-sm-3">
+        <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Wheelbase</h5>
+
+                            <input type="number" step="0.01" name="Wheelbase" required="required">
+                        </div>
+                    </div>
+
+    </div>
+
+
+  </div>
+
+
+<br><br><br>
+<div class="row">
+    <div class="col-sm">
+       <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Width</h5>
+
+                            <input type="number" step="0.01" name="Width" required="required">
+                        </div>
+                    </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Length</h5>
+
+                            <input type="number" step="0.01" name="Length" required="required">
+                        </div>
+                    </div>
+    </div>
+    <div class="col-sm">
+        <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Curb Weight</h5>
+
+                            <input type="number" step="0.01" name="Curb_weight" required="required">
+                        </div>
+                    </div>
+
+    </div>
+  </div>
+
+<br><br><br>
+<div class="row">
+    <div class="col-sm">
+       <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Fuel Capacity</h5>
+
+                            <input type="number" step="0.01" name="Fuel_capacity" required="required">
+                        </div>
+                    </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Fuel Efficiency</h5>
+
+                            <input type="number" step="0.01" name="Fuel_efficiency" required="required">
+                        </div>
+                    </div>
+    </div>
+    <div class="col-sm">
+        <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Power Perfection Factor</h5>
+
+                            <input type="number" step="0.01" name="Power_perf_factor" required="required">
+                        </div>
+                    </div>
+
+    </div>
+  </div>
+
+
+<br>
+            <br>
+            <br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+
+
+    </form>
+    <br>
+        <br>
+        <h3>{{ prediction_text }}</h3>
+
+
+</div>
+
+
+
+</body>
+</html>
